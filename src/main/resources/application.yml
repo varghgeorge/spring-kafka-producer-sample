@@ -1,0 +1,18 @@
+server:
+  port: 9000
+spring:
+  kafka:
+    bootstrap-servers: <kafka_server>:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      topic: mytopic.t
+
+  #  Following is required for the secure connection. Also, needed for Confluent cloud
+  #  properties:
+  #    ssl.endpoint.identification.algorithm: https
+  #    sasl.mechanism: PLAIN
+  #    request.timeout.ms: 20000
+  #    retry.backoff.ms: 500
+  #    sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="<user_name>" password="<password>";
+  #    security.protocol: SASL_SSL
